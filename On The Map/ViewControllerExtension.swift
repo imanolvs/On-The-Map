@@ -39,12 +39,14 @@ extension UIViewController {
         activityIndicator.center = view.center
         activityIndicator.startAnimating()
         view.addSubview(activityIndicator)
+        view.alpha = 0.4
         
     }
     
     func stopActivityIndicator(activityIndicator: UIActivityIndicatorView) {
         activityIndicator.stopAnimating()
         activityIndicator.removeFromSuperview()
+        view.alpha = 1
     }
     
     func logOutFromUdacityAndFacebook() {

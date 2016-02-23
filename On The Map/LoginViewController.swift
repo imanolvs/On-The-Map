@@ -77,21 +77,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         else {
             UdacityClient.sharedInstance().createSession(usernameTextField.text!, password: passwordTextField.text!) {
                 (success, error) in
-                if success == false {
-                    print(error)
-                    performUIUpdatesOnMain {
-                        self.stopActivityIndicator(activityIndicator)
-                        self.showAlertMessage("Invalid Email and/or Password")
+                guard success == true else {
+                    if error == "There was an error with your request" {
+                        performUIUpdatesOnMain {
+                            self.stopActivityIndicator(activityIndicator)
+                            self.showAlertMessage("Connection Error. Please, check your connection and try later")
+                        }
+                        
                     }
+                    else {
+                        performUIUpdatesOnMain {
+                            self.stopActivityIndicator(activityIndicator)
+                            self.showAlertMessage("Invalid Email and/or Password")
+                        }
+                    }
+                    return
                 }
-                else {
-                    print("Succesfully logged in")
-                    performUIUpdatesOnMain {
-                        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("MapTabController") as! UITabBarController
+                
+                print("Succesfully logged in")
+                performUIUpdatesOnMain {
+                    let controller = self.storyboard?.instantiateViewControllerWithIdentifier("MapTabController") as! UITabBarController
                                 
-                        self.stopActivityIndicator(activityIndicator)
-                        self.presentViewController(controller, animated: true, completion: nil)
-                    }
+                    self.stopActivityIndicator(activityIndicator)
+                    self.presentViewController(controller, animated: true, completion: nil)
                 }
             }
         }

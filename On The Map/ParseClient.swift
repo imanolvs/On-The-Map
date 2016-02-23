@@ -183,7 +183,7 @@ class ParseClient: NSObject {
             completionHandlerForConvertData(result: nil, error: "Could not parse the data as JSON: '\(data)'")
         }
         
-        guard let response = parsedResult[ParseClient.JSONKeys.Results] as? [String:AnyObject] else {
+        guard let response = parsedResult else {
             completionHandlerForConvertData(result: nil, error: "Could not parse the data as JSON: '\(data)'")
             return
         }

@@ -119,22 +119,34 @@ class PostingViewController: UIViewController, MKMapViewDelegate, UITextViewDele
             return
         }
         
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+        startActivityIndicator(activityIndicator)
+        
         UdacityClient.UserInfo.MediaURL = self.infoTextView.text
         if UdacityClient.UserInfo.ObjectId == nil {
             ParseClient.sharedInstance().postStudentLocation() { (result, error) in
                 guard error == nil else {
-                    performUIUpdatesOnMain { self.showAlertMessage("It was an error submitting your information. Please, try again") }
+                    print(error)
+                    performUIUpdatesOnMain {
+                        self.showAlertMessage("It was an error submitting your information. Please, try again")
+                        self.stopActivityIndicator(activityIndicator)
+                    }
                     return
                 }
                 UdacityClient.UserInfo.CreatedAt = result![ParseClient.JSONKeys.CreatedAt] as! String
                 UdacityClient.UserInfo.ObjectId = result![ParseClient.JSONKeys.ObjectID] as? String
+                performUIUpdatesOnMain { self.dismissViewControllerAnimated(true, completion: nil) }
             }
         }
         else {
             ParseClient.sharedInstance().updateStudentLocation() {
                 (result, error) in
                 guard error == nil else {
-                    performUIUpdatesOnMain { self.showAlertMessage("It was an error submitting your information. Please, try again") }
+                    print(error)
+                    performUIUpdatesOnMain {
+                        self.showAlertMessage("It was an error updating your information. Please, try again")
+                        self.stopActivityIndicator(activityIndicator)
+                    }
                     return
                 }
                 
@@ -142,35 +154,37 @@ class PostingViewController: UIViewController, MKMapViewDelegate, UITextViewDele
                 {
                     UdacityClient.UserInfo.UpdatedAt = updateAt
                 }
+                performUIUpdatesOnMain { self.dismissViewControllerAnimated(true, completion: nil) }
             }
         }
-        performUIUpdatesOnMain { self.dismissViewControllerAnimated(true, completion: nil) }
     }
     
     @IBAction func findOnTheMap(sender: UIButton) {
         
-        // TODO: Activity Indicator works?
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
         startActivityIndicator(activityIndicator)
-        self.view.alpha = 0.4
         
         markLocationOnMap() { (success, error) in
             guard success == true else {
                 print(error)
-                performUIUpdatesOnMain { self.showAlertMessage("Could Not Geocode the String") }
+                performUIUpdatesOnMain {
+                    self.showAlertMessage("Could Not Geocode the String")
+                    self.stopActivityIndicator(activityIndicator)
+                }
                 return
             }
             
-            self.locationTextView.hidden = true
-            self.infoTextView.hidden = false
-            self.upLabel.hidden = true
-            self.middleLabel.hidden = true
-            self.downLabel.hidden = true
-            self.mapView.hidden = false
-            self.findButton.hidden = true
-            self.submitButton.hidden = false
+            performUIUpdatesOnMain {
+                self.locationTextView.hidden = true
+                self.infoTextView.hidden = false
+                self.upLabel.hidden = true
+                self.middleLabel.hidden = true
+                self.downLabel.hidden = true
+                self.mapView.hidden = false
+                self.findButton.hidden = true
+                self.submitButton.hidden = false
+                self.stopActivityIndicator(activityIndicator)
+            }
         }
-        stopActivityIndicator(activityIndicator)
-        self.view.alpha = 1
     }
 }

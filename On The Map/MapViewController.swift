@@ -106,7 +106,6 @@ extension MapViewController {
     private func loadStudents() {
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
         startActivityIndicator(activityIndicator)
-        self.mapView.alpha = 0.4
         let limit = 100
         
         ParseClient.sharedInstance().getStudentLocation(limit, skip: nil, order: "-updatedAt") { (results, error) in
@@ -122,7 +121,6 @@ extension MapViewController {
             Students.sharedInstance().students = results!
             performUIUpdatesOnMain {
                 self.addStudentsToMap()
-                self.mapView.alpha = 1
                 self.stopActivityIndicator(activityIndicator)
             }
         }
