@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C41B36E1C7C88FE004E56A2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C41B36D1C7C88FE004E56A2 /* FBSDKCoreKit.framework */; };
+		2C41B3701C7C890A004E56A2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C41B36F1C7C890A004E56A2 /* FBSDKLoginKit.framework */; };
 		2C4334E41C7C785E0085AB19 /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4334E31C7C785E0085AB19 /* Students.swift */; };
 		2CA4AF1F1C769F0F0009741D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4AF1E1C769F0F0009741D /* AppDelegate.swift */; };
 		2CA4AF211C769F0F0009741D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4AF201C769F0F0009741D /* LoginViewController.swift */; };
@@ -25,11 +27,11 @@
 		2CA4AF4F1C7894E30009741D /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4AF4E1C7894E30009741D /* ViewControllerExtension.swift */; };
 		2CA4AF511C78DF200009741D /* PostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4AF501C78DF200009741D /* PostingViewController.swift */; };
 		2CA605F31C79F029000BD9CB /* UdacityStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA605F21C79F029000BD9CB /* UdacityStudent.swift */; };
-		2CE5B3571C7B957400492487 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE5B3561C7B957400492487 /* FBSDKCoreKit.framework */; };
-		2CE5B3591C7B975700492487 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE5B3581C7B975700492487 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C41B36D1C7C88FE004E56A2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		2C41B36F1C7C890A004E56A2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		2C4334E31C7C785E0085AB19 /* Students.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
 		2CA4AF1B1C769F0F0009741D /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA4AF1E1C769F0F0009741D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,8 +52,6 @@
 		2CA4AF4E1C7894E30009741D /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		2CA4AF501C78DF200009741D /* PostingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingViewController.swift; sourceTree = "<group>"; };
 		2CA605F21C79F029000BD9CB /* UdacityStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityStudent.swift; sourceTree = "<group>"; };
-		2CE5B3561C7B957400492487 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		2CE5B3581C7B975700492487 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CE5B3591C7B975700492487 /* FBSDKLoginKit.framework in Frameworks */,
-				2CE5B3571C7B957400492487 /* FBSDKCoreKit.framework in Frameworks */,
+				2C41B3701C7C890A004E56A2 /* FBSDKLoginKit.framework in Frameworks */,
+				2C41B36E1C7C88FE004E56A2 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +153,8 @@
 		2CE5B3291C7B88B100492487 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CE5B3581C7B975700492487 /* FBSDKLoginKit.framework */,
-				2CE5B3561C7B957400492487 /* FBSDKCoreKit.framework */,
+				2C41B36F1C7C890A004E56A2 /* FBSDKLoginKit.framework */,
+				2C41B36D1C7C88FE004E56A2 /* FBSDKCoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -356,7 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = "/Users/$(USER)/Documents/FacebookSDK";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/FacebookSDK";
 				INFOPLIST_FILE = "On The Map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "imanolvs.On-The-Map";
@@ -368,7 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = "/Users/$(USER)/Documents/FacebookSDK";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/FacebookSDK";
 				INFOPLIST_FILE = "On The Map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "imanolvs.On-The-Map";
