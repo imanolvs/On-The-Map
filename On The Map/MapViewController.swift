@@ -8,13 +8,10 @@
 
 import UIKit
 import MapKit
-import FBSDKLoginKit
 
 class MapViewController : UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-
-    var studentInfo: [StudentInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +82,7 @@ extension MapViewController {
     private func addStudentsToMap() {
         
         var annotations = [MKPointAnnotation]()
-        for student in studentInfo {
+        for student in Students.sharedInstance().students {
             let lat = CLLocationDegrees(student.latitude)
             let lon = CLLocationDegrees(student.longitude)
             
@@ -122,7 +119,7 @@ extension MapViewController {
                 return
             }
                 
-            self.studentInfo = results!
+            Students.sharedInstance().students = results!
             performUIUpdatesOnMain {
                 self.addStudentsToMap()
                 self.mapView.alpha = 1

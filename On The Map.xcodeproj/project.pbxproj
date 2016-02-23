@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4334E41C7C785E0085AB19 /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4334E31C7C785E0085AB19 /* Students.swift */; };
 		2CA4AF1F1C769F0F0009741D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4AF1E1C769F0F0009741D /* AppDelegate.swift */; };
 		2CA4AF211C769F0F0009741D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4AF201C769F0F0009741D /* LoginViewController.swift */; };
 		2CA4AF241C769F0F0009741D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4AF221C769F0F0009741D /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C4334E31C7C785E0085AB19 /* Students.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
 		2CA4AF1B1C769F0F0009741D /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA4AF1E1C769F0F0009741D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CA4AF201C769F0F0009741D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				2CA4AF3A1C76A8410009741D /* ParseClient.swift */,
 				2CA4AF3C1C76A8520009741D /* ParseConstants.swift */,
 				2CA4AF491C77D1470009741D /* StudentInfo.swift */,
+				2C4334E31C7C785E0085AB19 /* Students.swift */,
 			);
 			name = Parse;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				2CA4AF4F1C7894E30009741D /* ViewControllerExtension.swift in Sources */,
 				2CA4AF3D1C76A8520009741D /* ParseConstants.swift in Sources */,
 				2CA4AF401C7757E40009741D /* GCDBlackBox.swift in Sources */,
+				2C4334E41C7C785E0085AB19 /* Students.swift in Sources */,
 				2CA4AF441C77A4540009741D /* StudentTableViewController.swift in Sources */,
 				2CA4AF511C78DF200009741D /* PostingViewController.swift in Sources */,
 			);

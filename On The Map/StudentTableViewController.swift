@@ -12,8 +12,6 @@ class StudentTableViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBOutlet weak var tableView: UITableView!
     
-    var studentInfo: [StudentInfo] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,14 +27,14 @@ class StudentTableViewController: UIViewController, UITableViewDataSource, UITab
     
     // MARK: Table View Delegate
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return studentInfo.count
+        return Students.sharedInstance().students.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("StudentCell")! as UITableViewCell
         
-        cell.textLabel?.text = studentInfo[indexPath.row].firstName + " " + studentInfo[indexPath.row].lastName
-        cell.detailTextLabel?.text = studentInfo[indexPath.row].mediaURL
+        cell.textLabel?.text = Students.sharedInstance().students[indexPath.row].firstName + " " + Students.sharedInstance().students[indexPath.row].lastName
+        cell.detailTextLabel?.text = Students.sharedInstance().students[indexPath.row].mediaURL
         
         return cell
     }
@@ -94,7 +92,7 @@ extension StudentTableViewController {
                 return
             }
             
-            self.studentInfo = results!
+            Students.sharedInstance().students = results!
             
             performUIUpdatesOnMain {
                 self.tableView.reloadData()
