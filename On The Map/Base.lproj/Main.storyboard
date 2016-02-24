@@ -50,9 +50,28 @@
                                     <action selector="accountSignUp:" destination="fEq-Dt-z1m" eventType="touchUpInside" id="oVV-QV-WXc"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Simple-Map-Icon" translatesAutoresizingMaskIntoConstraints="NO" id="bQI-u5-bjv">
+                                <rect key="frame" x="50" y="57" width="502" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="YkI-CX-3th"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On The Map" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbG-ns-vkI">
+                                <rect key="frame" x="50" y="180" width="502" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="RkN-vg-wUB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.15875526011870159" blue="0.83203125" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.56408900439999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="YbG-ns-vkI" firstAttribute="leading" secondItem="pSh-jc-DXS" secondAttribute="leading" id="372-TP-nL1"/>
+                            <constraint firstItem="YbG-ns-vkI" firstAttribute="trailing" secondItem="pSh-jc-DXS" secondAttribute="trailing" id="4zg-uM-CC5"/>
+                            <constraint firstItem="YbG-ns-vkI" firstAttribute="top" secondItem="bQI-u5-bjv" secondAttribute="bottom" constant="23" id="AE8-So-GWU"/>
+                            <constraint firstItem="bQI-u5-bjv" firstAttribute="trailing" secondItem="YbG-ns-vkI" secondAttribute="trailing" id="E9f-lf-WDd"/>
                             <constraint firstItem="pRx-1d-FUE" firstAttribute="trailing" secondItem="Xge-5Q-eqx" secondAttribute="trailing" id="F2h-bB-mBs"/>
                             <constraint firstItem="Xge-5Q-eqx" firstAttribute="top" secondItem="jkX-nk-bpc" secondAttribute="bottom" constant="8" symbolic="YES" id="KCJ-DX-HvE"/>
                             <constraint firstItem="Xge-5Q-eqx" firstAttribute="leading" secondItem="jkX-nk-bpc" secondAttribute="leading" id="Omd-hs-1D3"/>
@@ -61,8 +80,10 @@
                             <constraint firstItem="jkX-nk-bpc" firstAttribute="trailing" secondItem="pSh-jc-DXS" secondAttribute="trailing" id="WcC-CU-YRj"/>
                             <constraint firstItem="pSh-jc-DXS" firstAttribute="leading" secondItem="jkX-nk-bpc" secondAttribute="leading" id="hHm-FV-Wvb"/>
                             <constraint firstItem="jkX-nk-bpc" firstAttribute="top" secondItem="pSh-jc-DXS" secondAttribute="bottom" constant="8" symbolic="YES" id="jZ5-uz-KJh"/>
+                            <constraint firstItem="bQI-u5-bjv" firstAttribute="leading" secondItem="YbG-ns-vkI" secondAttribute="leading" id="mgh-3x-gTb"/>
                             <constraint firstItem="pRx-1d-FUE" firstAttribute="top" secondItem="Xge-5Q-eqx" secondAttribute="bottom" constant="17" id="oxa-Rz-6nd"/>
                             <constraint firstItem="jkX-nk-bpc" firstAttribute="trailing" secondItem="Xge-5Q-eqx" secondAttribute="trailing" id="qKs-KB-NHk"/>
+                            <constraint firstItem="bQI-u5-bjv" firstAttribute="top" secondItem="cDz-Ai-6KD" secondAttribute="bottom" constant="37" id="rE5-dW-84l"/>
                             <constraint firstItem="c78-UD-2gT" firstAttribute="top" secondItem="pRx-1d-FUE" secondAttribute="bottom" constant="199" id="ut1-h5-f9l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pSh-jc-DXS" secondAttribute="trailing" constant="28" id="xLD-Vj-zah"/>
                         </constraints>
@@ -415,6 +436,7 @@
     <resources>
         <image name="Map Marker-52" width="52" height="52"/>
         <image name="MarkerIcon" width="52" height="52"/>
+        <image name="Simple-Map-Icon" width="512" height="512"/>
         <image name="TableIcon" width="50" height="50"/>
     </resources>
 </document>
